@@ -19,9 +19,16 @@ namespace TodoListWeb.Controllers
         }
 
         // GET: Todoes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Todoes.ToListAsync());
+            var todoes = from m in _context.Todoes select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                todoes = todoes.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await todoes.ToListAsync());
         }
 
         // GET: Todoes/Details/5
