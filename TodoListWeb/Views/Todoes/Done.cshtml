@@ -1,10 +1,10 @@
 @model IEnumerable<MvcTodoes.Models.Todoes>
 @* @model MvcTodoes.Models.Todoes *@
 @{
-    ViewData["Title"] = "To-do";
+    ViewData["Title"] = "Done list";
 }
 
-<h1>To-do</h1>
+<h1>Done list</h1>
 
 @* Not use *@
 @* <p>
@@ -12,21 +12,11 @@
 </p> *@
 
 @* Form to search task *@
-<form asp-controller="Todoes" asp-action="Index">
+<form asp-controller="Todoes" asp-action="Done">
     <p>
         Search Box: <input type="text" name="SearchString" 
         value="@ViewData["CurrentFilter"]" placeholder="Name task." />
         <input type="submit" value="Filter" />
-    </p>
-</form>
-
-@* Form to add task *@
-<form asp-controller="Todoes" asp-action="ShotCreate" method="post">
-    <p>
-        Add to-do list: <input type="text" name="Title" 
-        placeholder="Name task." />
-        @* <span asp-validation-for="Title" class="text-danger"></span> *@
-        <input type="submit" value="Add" />
     </p>
 </form>
 
@@ -55,8 +45,8 @@
                 @* Not use *@
                 @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
-
-                <a asp-action="MakeDone" asp-route-id="@item.Id">Done</a>|
+                
+                <a asp-action="MakeDone" asp-route-id="@item.Id">Not Done</a>|
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>

@@ -21,7 +21,28 @@ namespace TodoListWeb.Controllers
         // GET: Todoes
         public async Task<IActionResult> Index(string searchString)
         {
+            ViewData["CurrentFilter"] = searchString;
+            var todoes = from s in _context.Todoes select s;
+
+            // to filter todo list is not check
+            todoes = todoes.Where(s => s.Check == false);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                todoes = todoes.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await todoes.ToListAsync());
+        }
+
+        // GET: Todoes/Done
+        public async Task<IActionResult> Done(string searchString)
+        {
+            ViewData["CurrentFilter"] = searchString;
             var todoes = from m in _context.Todoes select m;
+
+            // to filter todo list is check
+            todoes = todoes.Where(s => s.Check == true);
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -69,6 +90,21 @@ namespace TodoListWeb.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(todoes);
+        }
+
+        // POST: Todoes/Create/Title
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ShotCreate(string Title)
+        {
+            if (Title == null){
+                return NotFound();
+            }
+            Todoes todoes = new Todoes();
+            todoes.Title = Title;
+            _context.Add(todoes);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Todoes/Edit/5
@@ -137,14 +173,12 @@ namespace TodoListWeb.Controllers
             }
 
             // Update value
-            todoes.Check = true;
             if (ModelState.IsValid)
             {
                 try
                 {
                     // To change Check value
-                    todoes.Check = true;
-
+                    todoes.Check = !todoes.Check ;
                     _context.Update(todoes);
                     await _context.SaveChangesAsync();
                 }

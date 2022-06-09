@@ -174,3 +174,4 @@ D:\Bank_work\Train_Project\ASP\TodoListWeb\obj\Debug\net5.0\Razor\Views\Todoes\D
 D:\Bank_work\Train_Project\ASP\TodoListWeb\obj\Debug\net5.0\Razor\Views\Todoes\Details.cshtml.g.cs
 D:\Bank_work\Train_Project\ASP\TodoListWeb\obj\Debug\net5.0\Razor\Views\Todoes\Edit.cshtml.g.cs
 D:\Bank_work\Train_Project\ASP\TodoListWeb\obj\Debug\net5.0\Razor\Views\Todoes\Index.cshtml.g.cs
+D:\Bank_work\Train_Project\ASP\TodoListWeb\obj\Debug\net5.0\Razor\Views\Todoes\Done.cshtml.g.cs
