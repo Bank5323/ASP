@@ -159,7 +159,7 @@ namespace TodoListWeb.Controllers
         }
 
         // GET: Todoes/Makedone/?id
-        public async Task<IActionResult> Makedone(int? id)
+        public async Task<IActionResult> Makedone(int? id,bool pageIndex)
         {
             // quarry data from id
             if (id == null)
@@ -193,7 +193,11 @@ namespace TodoListWeb.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                if (pageIndex)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                return RedirectToAction(nameof(Done));
             }
             return NotFound();
         }

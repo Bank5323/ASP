@@ -7,7 +7,7 @@ namespace MvcTodoes.Models
     {
         public int Id { get; set; }
 
-        [StringLength(60, MinimumLength = 3)]
+        [StringLength(60)]
         [Required]
         public string Title { get; set; }
 

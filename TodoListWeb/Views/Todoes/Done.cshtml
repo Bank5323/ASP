@@ -46,8 +46,12 @@
                 @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
                 
-                <a asp-action="MakeDone" asp-route-id="@item.Id">Not Done</a>|
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <button type="button">
+                    <a asp-action="MakeDone" asp-route-id="@item.Id">Not Done</a>
+                </button>
+                <button type="button">
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </button>
             </td>
         </tr>
 }
