@@ -25,6 +25,7 @@ namespace TodoListWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
             services.AddDbContext<MvcTodoesContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("MvcTodoesContext")));
@@ -48,6 +49,7 @@ namespace TodoListWeb
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -55,6 +57,7 @@ namespace TodoListWeb
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Todoes}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

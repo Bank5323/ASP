@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CJBwBPBGquXpl4b9oJm2ieRE8+nCYTsYcpLjs5BDWLxjlKb64dzl0R98JYw4VBLGb7SpW2mL873kUj1JeidnEw==",
+  "dgSpecHash": "77mO0zaLfLPRC6eZBIH69z2q9EZeNC79oWTTk7gWleq39C3Py/WakWnLaXB50436IlvndDjy1i+aE8ziusWrCQ==",
   "success": true,
-  "projectFilePath": "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\TodoListWeb.csproj",
+  "projectFilePath": "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\TodoListWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",

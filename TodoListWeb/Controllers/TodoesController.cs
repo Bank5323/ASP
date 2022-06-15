@@ -7,8 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcTodoes.Models;
 
+// Add Microsoft.AspNetCore.Authorization to Authorize
+using Microsoft.AspNetCore.Authorization;
+
 namespace TodoListWeb.Controllers
 {
+    [Authorize]
     public class TodoesController : Controller
     {
         private readonly MvcTodoesContext _context;

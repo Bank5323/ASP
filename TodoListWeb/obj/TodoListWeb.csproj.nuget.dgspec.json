@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\TodoListWeb.csproj": {}
+    "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\TodoListWeb.csproj": {}
   },
   "projects": {
-    "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\TodoListWeb.csproj": {
+    "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\TodoListWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\TodoListWeb.csproj",
+        "projectUniqueName": "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\TodoListWeb.csproj",
         "projectName": "TodoListWeb",
-        "projectPath": "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\TodoListWeb.csproj",
+        "projectPath": "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\TodoListWeb.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Bank_work\\Train_Project\\ASP\\TodoListWeb\\obj\\",
+        "outputPath": "D:\\Bank_work\\Train_Project\\To-Do-List-ASP-net\\TodoListWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
