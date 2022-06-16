@@ -47,7 +47,7 @@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
                 
                 <button type="button">
-                    <a asp-action="MakeDone" asp-route-id="@item.Id">Not Done</a>
+                    <a asp-action="ChangeStatus" asp-route-id="@item.Id">Not Done</a>
                 </button>
                 <button type="button">
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

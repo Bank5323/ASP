@@ -12,10 +12,6 @@ namespace MvcTodoes.Models
         public string Title { get; set; }
 
         public bool Check { get; set; }
-
-        public Todoes()
-        {
-            Check = false;
-        }
+        public string IdUser {get; set;}
     }
 }

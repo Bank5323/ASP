@@ -1,5 +1,5 @@
 @model IEnumerable<MvcTodoes.Models.Todoes>
-@* @model MvcTodoes.Models.Todoes *@
+
 @{
     ViewData["Title"] = "To-do";
 }
@@ -25,7 +25,6 @@
     <p>
         Add to-do list: <input type="text" name="Title" 
         placeholder="Name task." />
-        @* <span asp-validation-for="Title" class="text-danger"></span> *@
         <input type="submit" value="Add" />
     </p>
 </form>
@@ -52,11 +51,8 @@
                 @Html.DisplayFor(modelItem => item.Check)
             </td>
             <td>
-                @* Not use *@
-                @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
                 <button type="button">
-                    <a asp-action="MakeDone" asp-route-id="@item.Id" asp-route-pageIndex="true">Done</a>
+                    <a asp-action="ChangeStatus" asp-route-id="@item.Id" asp-route-pageIndex="true">Done</a>
                 </button>
                 <button type="button">
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
