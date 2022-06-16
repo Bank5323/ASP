@@ -24,10 +24,7 @@ namespace TodoListWeb.Controllers
             _context = context;
         }
 
-        // GET: Todoes
-        public async Task<IActionResult> Index(string searchString)
-        {
-            string _Iduser = null;
+        private string getUserId(){
             var claimsIdentity = User.Identity as ClaimsIdentity;
             if (claimsIdentity != null)
             {
@@ -38,9 +35,16 @@ namespace TodoListWeb.Controllers
 
                 if (userIdClaim != null)
                 {
-                    _Iduser = userIdClaim.Value;
+                    return userIdClaim.Value;
                 }
             }
+            return null;
+        }
+
+        // GET: Todoes
+        public async Task<IActionResult> Index(string searchString)
+        {
+            string _Iduser = getUserId();
 
             ViewData["CurrentFilter"] = searchString;
             var todoes = from s in _context.Todoes select s;
@@ -61,20 +65,7 @@ namespace TodoListWeb.Controllers
         // GET: Todoes/Done
         public async Task<IActionResult> Done(string searchString)
         {
-            string _Iduser = null;
-            var claimsIdentity = User.Identity as ClaimsIdentity;
-            if (claimsIdentity != null)
-            {
-                // the principal identity is a claims identity.
-                // now we need to find the NameIdentifier claim
-                var userIdClaim = claimsIdentity.Claims
-                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
-
-                if (userIdClaim != null)
-                {
-                    _Iduser = userIdClaim.Value;
-                }
-            }
+            string _Iduser = getUserId();
 
             ViewData["CurrentFilter"] = searchString;
             var todoes = from s in _context.Todoes select s;
@@ -159,20 +150,7 @@ namespace TodoListWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ShotCreate(string Title)
         {
-            string _Iduser = null;
-            var claimsIdentity = User.Identity as ClaimsIdentity;
-            if (claimsIdentity != null)
-            {
-                // the principal identity is a claims identity.
-                // now we need to find the NameIdentifier claim
-                var userIdClaim = claimsIdentity.Claims
-                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
-
-                if (userIdClaim != null)
-                {
-                    _Iduser = userIdClaim.Value;
-                }
-            }
+            string _Iduser = getUserId();
 
             if (Title == null){
                 return NotFound();
